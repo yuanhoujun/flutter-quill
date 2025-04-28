@@ -6,7 +6,7 @@ Widget defaultQuillMagnifierBuilder(Offset dragPosition) =>
     QuillMagnifier(dragPosition: dragPosition);
 
 class QuillMagnifier extends StatelessWidget {
-  const QuillMagnifier({required this.dragPosition,  super.key});
+  const QuillMagnifier({required this.dragPosition, super.key});
 
   final Offset dragPosition;
 
@@ -18,25 +18,28 @@ class QuillMagnifier extends StatelessWidget {
       left: position.dx,
       child: Container(
         decoration: BoxDecoration(
+          borderRadius: BorderRadius.circular(20),
+        ),
+        child: ClipRRect(
             borderRadius: BorderRadius.circular(20),
-        ),
-        child: RawMagnifier(
-          clipBehavior: Clip.hardEdge,
-          decoration: MagnifierDecoration(
-            shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(20)),
-            shadows: const [
-              BoxShadow(
-                color: Colors.black26,
-                spreadRadius: 2,
-                blurRadius: 5,
-                offset: Offset(3, 3), // changes position of shadow
+            clipBehavior: Clip.hardEdge,
+            child: RawMagnifier(
+              decoration: MagnifierDecoration(
+                shape: RoundedRectangleBorder(
+                    borderRadius: BorderRadius.circular(20)),
+                shadows: const [
+                  BoxShadow(
+                    color: Colors.black26,
+                    spreadRadius: 2,
+                    blurRadius: 5,
+                    offset: Offset(3, 3), // changes position of shadow
+                  ),
+                ],
               ),
-            ],
-          ),
-          size: const Size(100, 45),
-          focalPointOffset: const Offset(5, 55),
-          magnificationScale: 1.3,
-        ),
+              size: const Size(100, 45),
+              focalPointOffset: const Offset(5, 55),
+              magnificationScale: 1.3,
+            )),
       ),
     );
   }
