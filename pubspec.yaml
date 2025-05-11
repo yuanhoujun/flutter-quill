@@ -6,6 +6,7 @@ repository: https://github.com/singerdmx/flutter-quill/
 issue_tracker: https://github.com/singerdmx/flutter-quill/issues/
 documentation: https://github.com/singerdmx/flutter-quill/
 topics: [editor, text, rich-text-editor, quill, flutter-quill]
+publish_to: none
 
 screenshots:
   - description: "iOS Light Mode"
@@ -51,8 +52,13 @@ dependencies:
 
   # Plugins
   url_launcher: ^6.2.1
-  flutter_keyboard_visibility_temp_fork: ^0.1.1
-  quill_native_bridge: ^11.0.0
+  flutter_keyboard_visibility:
+    git: 
+      url: https://gitcode.com/openharmony-sig/flutter_keyboard_visibility.git
+      path: flutter_keyboard_visibility
+  
+  quill_native_bridge: 
+    path: ../quill-native-bridge/quill_native_bridge
 
 dev_dependencies:
   flutter_lints: ^4.0.0

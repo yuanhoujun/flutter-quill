@@ -15,6 +15,7 @@
   "overrides": {
     "@ohos/flutter_ohos": "file:./har/flutter.har",
     "integration_test": "file:./har/integration_test.har",
-    "@ohos/flutter_module": "file:./entry"
+    "@ohos/flutter_module": "file:./entry",
+    "flutter_keyboard_visibility": "file:./har/flutter_keyboard_visibility.har"
   }
 }

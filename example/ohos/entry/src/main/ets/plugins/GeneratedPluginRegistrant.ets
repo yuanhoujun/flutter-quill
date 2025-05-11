@@ -1,4 +1,5 @@
 import { FlutterEngine, Log } from '@ohos/flutter_ohos';
+import FlutterKeyboardVisibilityPlugin from 'flutter_keyboard_visibility';
 import IntegrationTestPlugin from 'integration_test';
 
 /**
@@ -13,6 +14,7 @@ export class GeneratedPluginRegistrant {
 
   static registerWith(flutterEngine: FlutterEngine) {
     try {
+      flutterEngine.getPlugins()?.add(new FlutterKeyboardVisibilityPlugin());
       flutterEngine.getPlugins()?.add(new IntegrationTestPlugin());
     } catch (e) {
       Log.e(
