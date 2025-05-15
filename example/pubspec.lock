@@ -593,11 +593,12 @@ packages:
   url_launcher:
     dependency: transitive
     description:
-      name: url_launcher
-      sha256: "9d06212b1362abc2f0f0d78e6f09f726608c74e3b9462e8368bb03314aa8d603"
-      url: "https://pub.flutter-io.cn"
-    source: hosted
-    version: "6.3.1"
+      path: "packages/url_launcher/url_launcher"
+      ref: HEAD
+      resolved-ref: "74bf3d4bbb974316cf792b7d8b29b0d25a046311"
+      url: "https://gitcode.com/openharmony-sig/flutter_packages.git"
+    source: git
+    version: "6.1.12"
   url_launcher_android:
     dependency: transitive
     description:
@@ -630,6 +631,15 @@ packages:
       url: "https://pub.flutter-io.cn"
     source: hosted
     version: "3.2.2"
+  url_launcher_ohos:
+    dependency: transitive
+    description:
+      path: "packages/url_launcher/url_launcher_ohos"
+      ref: HEAD
+      resolved-ref: "74bf3d4bbb974316cf792b7d8b29b0d25a046311"
+      url: "https://gitcode.com/openharmony-sig/flutter_packages.git"
+    source: git
+    version: "6.0.38"
   url_launcher_platform_interface:
     dependency: transitive
     description:
