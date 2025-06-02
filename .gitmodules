@@ -1,0 +1,4 @@
+[submodule "packages/quill-native-bridge"]
+	path = packages/quill-native-bridge
+	url = https://github.com/yuanhoujun/quill-native-bridge.git
+	branch = ohos

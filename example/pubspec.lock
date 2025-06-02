@@ -485,7 +485,7 @@ packages:
   quill_native_bridge:
     dependency: transitive
     description:
-      path: "../../quill-native-bridge/quill_native_bridge"
+      path: "../packages/quill-native-bridge/quill_native_bridge"
       relative: true
     source: path
     version: "11.0.1"
