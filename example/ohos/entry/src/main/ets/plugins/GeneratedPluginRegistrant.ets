@@ -1,5 +1,7 @@
 import { FlutterEngine, Log } from '@ohos/flutter_ohos';
+import FlutterKeyboardVisibilityPlugin from 'flutter_keyboard_visibility';
 import IntegrationTestPlugin from 'integration_test';
+import UrlLauncherPlugin from 'url_launcher_ohos';
 
 /**
  * Generated file. Do not edit.
@@ -13,7 +15,9 @@ export class GeneratedPluginRegistrant {
 
   static registerWith(flutterEngine: FlutterEngine) {
     try {
+      flutterEngine.getPlugins()?.add(new FlutterKeyboardVisibilityPlugin());
       flutterEngine.getPlugins()?.add(new IntegrationTestPlugin());
+      flutterEngine.getPlugins()?.add(new UrlLauncherPlugin());
     } catch (e) {
       Log.e(
         TAG,
