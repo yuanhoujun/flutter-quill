@@ -1,6 +1,7 @@
 import { FlutterEngine, Log } from '@ohos/flutter_ohos';
 import FlutterKeyboardVisibilityPlugin from 'flutter_keyboard_visibility';
 import IntegrationTestPlugin from 'integration_test';
+import PermissionHandlerPlugin from 'permission_handler_ohos';
 import UrlLauncherPlugin from 'url_launcher_ohos';
 
 /**
@@ -17,6 +18,7 @@ export class GeneratedPluginRegistrant {
     try {
       flutterEngine.getPlugins()?.add(new FlutterKeyboardVisibilityPlugin());
       flutterEngine.getPlugins()?.add(new IntegrationTestPlugin());
+      flutterEngine.getPlugins()?.add(new PermissionHandlerPlugin());
       flutterEngine.getPlugins()?.add(new UrlLauncherPlugin());
     } catch (e) {
       Log.e(

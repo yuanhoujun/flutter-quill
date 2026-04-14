@@ -17,6 +17,8 @@
     "integration_test": "file:./har/integration_test.har",
     "@ohos/flutter_module": "file:./entry",
     "flutter_keyboard_visibility": "file:./har/flutter_keyboard_visibility.har",
-    "url_launcher_ohos": "file:./har/url_launcher_ohos.har"
+    "url_launcher_ohos": "file:./har/url_launcher_ohos.har",
+    "quill_native_bridge_ohos": "file:./har/quill_native_bridge_ohos.har",
+    "permission_handler_ohos": "file:./har/permission_handler_ohos.har"
   }
 }

@@ -6,6 +6,7 @@ library;
 import 'package:flutter/widgets.dart' show TextSelection;
 import 'package:html/parser.dart' as html_parser;
 import 'package:meta/meta.dart';
+import 'package:permission_handler/permission_handler.dart';
 
 import '../../../quill_delta.dart';
 import '../../delta/delta_x.dart';

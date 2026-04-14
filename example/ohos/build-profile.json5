@@ -5,13 +5,13 @@
         "name": "default",
         "type": "HarmonyOS",
         "material": {
-          "certpath": "/Users/ouyangfeng/.ohos/config/default_ohos_f2qfsYASpajZgL2WU6mhPlB1L_t23Ypxi4s0ncVIO2Y=.cer",
-          "storePassword": "0000001B888A5B62BFC72C78C0435D16F2C3F5CEDC428816F51716C62192D569632F12DDB4C7EDA9749500",
+          "certpath": "/Users/ouyangfeng/.ohos/config/default_ohos_hXp8pqUeQgmaaX2OZJjuVwk7SZnvm6YGxryovxYsjyE=.cer",
           "keyAlias": "debugKey",
-          "keyPassword": "0000001BF9F592515730F0FF1EA66B5290F399532CB9068736E558FBBDDA8D13546515BA1959FAD2AEE0D6",
-          "profile": "/Users/ouyangfeng/.ohos/config/default_ohos_f2qfsYASpajZgL2WU6mhPlB1L_t23Ypxi4s0ncVIO2Y=.p7b",
+          "keyPassword": "0000001BF4B00BD8928DCD6D4FEDE32398B267A330222759D8B6FF0EA94865C11B175FB0397B344FE57C2C",
+          "profile": "/Users/ouyangfeng/.ohos/config/default_ohos_hXp8pqUeQgmaaX2OZJjuVwk7SZnvm6YGxryovxYsjyE=.p7b",
           "signAlg": "SHA256withECDSA",
-          "storeFile": "/Users/ouyangfeng/.ohos/config/default_ohos_f2qfsYASpajZgL2WU6mhPlB1L_t23Ypxi4s0ncVIO2Y=.p12"
+          "storeFile": "/Users/ouyangfeng/.ohos/config/default_ohos_hXp8pqUeQgmaaX2OZJjuVwk7SZnvm6YGxryovxYsjyE=.p12",
+          "storePassword": "0000001B6D17041FA6FFA069DB8C7C8A7953BF1AFC234382CB95C0A8BE79786B8C6B61B2267D7C5AADF9DE"
         }
       }
     ],
