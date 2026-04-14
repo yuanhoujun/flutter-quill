@@ -8,6 +8,7 @@
   "dependencies": {
     "integration_test": "file:../har/integration_test.har",
     "flutter_keyboard_visibility": "file:../har/flutter_keyboard_visibility.har",
-    "url_launcher_ohos": "file:../har/url_launcher_ohos.har"
+    "url_launcher_ohos": "file:../har/url_launcher_ohos.har",
+    "@ohos/flutter_ohos": "har/flutter.har"
   }
 }
