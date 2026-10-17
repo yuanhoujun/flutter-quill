@@ -125,11 +125,21 @@ mixin RawEditorStateTextInputClientMixin on EditorState
       // Windows consumes setMarkedTextRect, not setCaretRect. Some IMEs
       // provide no inline composing range, so keep the native anchor current
       // using the selection instead of leaving it at the first input position.
+      final selection = renderEditor.selection;
+      // Controller-side edits (for example Enter) can leave the last native
+      // composing range behind. Once the selection leaves that range, it no
+      // longer describes the current composition anchor.
+      final composingRangeContainsSelection =
+          composingRange.isValid &&
+          !composingRange.isCollapsed &&
+          composingRange.end <= widget.controller.document.length &&
+          selection.isValid &&
+          selection.start >= composingRange.start &&
+          selection.end <= composingRange.end;
       final useCaretFallback =
           !kIsWeb &&
           defaultTargetPlatform == TargetPlatform.windows &&
-          (!composingRange.isValid || composingRange.isCollapsed);
-      final selection = renderEditor.selection;
+          !composingRangeContainsSelection;
       if (!dirty &&
           (useCaretFallback ? selection.isValid : composingRange.isValid)) {
         final offset = useCaretFallback
