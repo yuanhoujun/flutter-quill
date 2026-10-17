@@ -89,6 +89,30 @@ void main() {
       await tester.pump();
       expectAnchorAt(17);
 
+      // Delete everything while the last native composing range still points
+      // into the old document. Reset the anchor before the first new key.
+      controller.replaceText(
+        0,
+        controller.document.length - 1,
+        '',
+        const TextSelection.collapsed(offset: 0),
+      );
+      await tester.pump();
+      expect(controller.document.toPlainText(), '\n');
+      expectAnchorAt(0);
+      expect(lastAnchor()['y'], closeTo(initialY, 0.01));
+
+      // Starting another composition must not restore the deleted text's anchor.
+      tester.testTextInput.updateEditingValue(
+        const TextEditingValue(
+          text: 'n\n',
+          selection: TextSelection.collapsed(offset: 1),
+          composing: TextRange(start: 0, end: 1),
+        ),
+      );
+      await tester.pump();
+      expectAnchorAt(0);
+
       // A collapsed composing range is not active composition.
       tester.testTextInput.updateEditingValue(
         const TextEditingValue(
