@@ -122,12 +122,25 @@ mixin RawEditorStateTextInputClientMixin on EditorState
         textEditingValue.composing;
     if (hasConnection) {
       assert(mounted);
-      if (composingRange.isValid) {
-        final offset = composingRange.start;
-        final composingRect = renderEditor.getLocalRectForCaret(
-          TextPosition(offset: offset),
-        );
-        _textInputConnection!.setComposingRect(composingRect);
+      // Windows consumes setMarkedTextRect, not setCaretRect. Some IMEs
+      // provide no inline composing range, so keep the native anchor current
+      // using the selection instead of leaving it at the first input position.
+      final useCaretFallback =
+          !kIsWeb &&
+          defaultTargetPlatform == TargetPlatform.windows &&
+          (!composingRange.isValid || composingRange.isCollapsed);
+      final selection = renderEditor.selection;
+      if (!dirty &&
+          (useCaretFallback ? selection.isValid : composingRange.isValid)) {
+        final offset = useCaretFallback
+            ? selection.extentOffset
+            : composingRange.start;
+        if (offset >= 0 && offset < widget.controller.document.length) {
+          final composingRect = renderEditor.getLocalRectForCaret(
+            TextPosition(offset: offset),
+          );
+          _textInputConnection!.setComposingRect(composingRect);
+        }
       }
       SchedulerBinding.instance.addPostFrameCallback(
         (_) => _updateComposingRectIfNeeded(),
